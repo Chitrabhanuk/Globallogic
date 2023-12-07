@@ -1,10 +1,15 @@
 select
-        c_custkey as customer_id,
-        c_nationkey as nation_id,
-        c_name as customer_name,
-        c_address as address,
-        c_phone as phone_number,
-        c_acctbal as account_balance,
-        c_mktsegment as market_segment,
-        c_comment as comment
-from sourcedb.mk_mall.customers
+customer_id,
+c.name,
+address,
+phone_number,
+account_balance,
+market_segment,
+n.name as nation,
+r.name as region,
+comment
+from {{ref('stg_customers')}} as c
+join  {{ref('stg_nations')}} as n
+on c.nation_id = n.nation_id
+join {{ref('stg_regions')}} as r
+on n.region_id=r.region_id
