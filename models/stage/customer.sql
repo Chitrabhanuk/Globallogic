@@ -1,13 +1,13 @@
 select
 customer_id,
-c.name,
+c.name as customer_name,
 address,
 phone_number,
 account_balance,
 market_segment,
 n.name as nation,
 r.name as region,
-comment
+c.comment
 from {{ref('stg_customers')}} as c
 join  {{ref('stg_nations')}} as n
 on c.nation_id = n.nation_id

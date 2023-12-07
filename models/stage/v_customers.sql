@@ -11,9 +11,9 @@ select
         c_phone as phone_number,
         c_acctbal as account_balance,
         c_mktsegment as market_segment,
-        c_comment as comment
+        c_comment as c_comment
 from {{ source('src','customers') }} as c 
 join {{ source('src','nations') }} as n
-on c.c_nation_id =n.c_nation_id
+on c.c_nationkey =n.n_nationkey
 join {{ source('src','regions') }}  as r
-on n.region_id=r.region_id
+on n.n_regionkey=r.r_regionKey
