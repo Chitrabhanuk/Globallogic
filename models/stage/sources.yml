@@ -13,7 +13,13 @@ sources:
       - name: partsupps
       - name: supplier
       - name: orders
+      # to check the orderdate in src/check the values at the specified field
+        loaded_at_field: o_orderdate::timestamp
+        freshness:
+         warn_after: {count: 5, period: day} # loaded value is prior to one day then throws warning
+        error_after: {count: 5, period: day}
 
-    # loaded_at_field: o_orderdate::timestamp
-    #   freshness:
-    #     warn_after: {count: 1, period: day}
+            #warn_after: {count: 5, period: day}
+          # warn_after: {count: 3, period: hour}models:
+
+  
