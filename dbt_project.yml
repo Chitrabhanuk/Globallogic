@@ -39,3 +39,7 @@ models:
     # example:
     stage:
     +materialized: table
+
+    vars: 
+      euro=0.85
+      inr=83

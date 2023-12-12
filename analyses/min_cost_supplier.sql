@@ -1,0 +1,1 @@
+select distinct market_segment from {{ source('src','customers')}}

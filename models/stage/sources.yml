@@ -11,7 +11,7 @@ sources:
       - name: lineitems
       - name: parts
       - name: partsupps
-      - name: supplier
+      - name: suppliers
       - name: orders
       # to check the orderdate in src/check the values at the specified field
         loaded_at_field: o_orderdate::timestamp
